@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Categories of Games
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Choose a game category</h1>
+        </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary"><a class="nav-link" href="/action">Action</a></button>
+        <button type="button" class="btn btn-secondary"><a class="nav-link" href="/roleplaying">Roleplaying</a></button>
+        <button type="button" class="btn btn-secondary"><a class="nav-link" href="/strategy">Strategy</a></button>
+        <button type="button" class="btn btn-secondary"><a class="nav-link" href="/adventure">Adventure</a></button>
+        <button type="button" class="btn btn-secondary"><a class="nav-link" href="/simulation">Simulation</a></button>
+        <button type="button" class="btn btn-secondary"><a class="nav-link" href="/sports">Sports</a></button>
+    </div>
+{% endblock %}

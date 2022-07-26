@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Administrator Page
+{% endblock %}
+
+{% block main %}
+    <h3>Requests awaiting approval</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Game</th>
+                <th scope="col">Genre</th>
+                <th scope="col">More Information</th>
+                <th scope="col">Approve | Deny</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in all_requests %}
+                <tr>
+                    <th scope="row">{{ request.id }}</th>
+                    <td>{{ request.gamename }}</td>
+                    <td>{{ request.genre }}</td>
+                    <td style="word-wrap: break-word;min-width: 160px;max-width: 160px;">{{ request.website }}</td>
+                    <form action="/admin" method="post">
+                        <td>
+                            <select name="decision" class="form-select" aria-label="Default select example">
+                                <option disabled selected>Approve/Deny</option>
+                                <option value="approve">Approve</option>
+                                <option value="deny">Deny</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </td>
+                    </form>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Game Roulette
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to the Roulette Picker!</h1>
+        </div>
+    </div>
+    <h3>I'm sure there are times where we aren't sure of what games we want to play.</h3>
+    <h3>This will help you decide!</h3>
+    <h3>Press the button below to pick a random game!</h3>
+    <form action="/roulette" method="post">
+        <button type="submit" class="btn btn-primary">Roll the Roulette!</button>
+    </form>
+
+    {% if games %}
+    <div>
+        <h3>Here is your selected game!</h3>
+    </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Game</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">More Information</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for game in games %}
+                <tr>
+                    <th scope="row">{{ game.id }}</th>
+                    <td>{{ game.gamename }}</td>
+                    <td>{{ game.genre }}</td>
+                    <td style="word-wrap: break-word;min-width: 160px;max-width: 160px;"><a href={{ game.website }}>{{ game.website }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

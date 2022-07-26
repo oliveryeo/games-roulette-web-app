@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Game Requests
+{% endblock %}
+
+{% block main %}
+    <script>
+        function success(){
+            alert('Form Submitted');
+        }
+    </script>
+    <form onsubmit="success();" action="/requests" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Game Name</label>
+            <input autocomplete="off" autofocus type="text" class="form-control" name="name" placeholder="e.g. Call of Duty">
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="action" id="inlineCheckbox1" value="Action">
+            <label class="form-check-label" for="inlineCheckbox1">Action</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="roleplaying" id="inlineCheckbox2" value="Roleplaying">
+            <label class="form-check-label" for="inlineCheckbox2">Roleplaying</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="strategy" id="inlineCheckbox3" value="Strategy">
+            <label class="form-check-label" for="inlineCheckbox3">Strategy</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="adventure" id="inlineCheckbox4" value="Adventure">
+            <label class="form-check-label" for="inlineCheckbox1">Adventure</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="simulation" id="inlineCheckbox5" value="Simulation">
+            <label class="form-check-label" for="inlineCheckbox2">Simulation</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="sports" id="inlineCheckbox6" value="Sports">
+            <label class="form-check-label" for="inlineCheckbox3">Sports</label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Game's Website</label>
+            <input autocomplete="off" autofocus type="text" class="form-control" name="website" placeholder="e.g. https://www.callofduty.com/">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

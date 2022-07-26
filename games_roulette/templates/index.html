@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to the Games Roulette!</h1>
+            <p>This web app allows you to search for games you would like to discover based on their genre!</p>
+        </div>
+    </div>
+    <h3>Here are some recently added games to the database!</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Game</th>
+                <th scope="col">Genre</th>
+                <th scope="col">More Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+            <tr>
+                <th scope="row">{{ game.id }}</th>
+                <td>{{ game.gamename }}</td>
+                <td>{{ game.genre }}</td>
+                <td style="word-wrap: break-word;min-width: 160px;max-width: 160px;"><a href={{ game.website }}>{{ game.website }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
