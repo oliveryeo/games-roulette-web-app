@@ -5,7 +5,10 @@ https://www.youtube.com/watch?v=BZUR2kbreqw
 With the COVID-19 Pandemic, more and more people will be home-bound and I'm sure most of them would like to spend their time playing video games. But where do we start? What games do we play? This is the most common question we ask ourselves when we do not have a game in mind. This is where Games Roulette come into play, to potentially collate all different games with the help of the users as well. If you have no idea what games to play, the games roulette has a roulette picker which randomize and chooses a game for you!
 
 **Framework used: Flask**
+
 **Database used: SQLite**
+
+Most of the design is taken from bootstrap.
 
 **Functions of the web app:**
     Users can view recently added games in the homepage of the web app. Users can also request games to be added onto the web app database that they are passionate about.
